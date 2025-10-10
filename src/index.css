@@ -1,13 +1,132 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ---------- Theme tokens ---------- */
+:root{
+  background-color: #003e4a;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color:var(--ink);
+  background: radial-gradient(1200px 600px at 20% -10%, #123a7a60, transparent 60%),
+              radial-gradient(900px 500px at 90% 10%, #0d366760, transparent 55%),
+              linear-gradient(180deg, var(--bg-900), var(--bg-800));
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  padding:70px 0 36px;
+  text-align:center;
+}
+.hero h1{
+  margin:0 0 10px;
+  font-size: clamp(32px, 5vw, 44px);
+  font-weight: 900;
+  letter-spacing:.3px;
+  color:var(--mint);
+  text-shadow: 0 4px 24px rgba(46,230,166,.25);
+}
+.hero .lead{
+  margin:0 auto;
+  max-width:72ch;
+  color:var(--ink-dim);
+  font-size: 18px;
+  line-height:1.6;
+}
+
+/* subtle underline accent */
+.hero::after{
+  content:"";
+  display:block;
+  width:min(180px,40%);
+  height:4px;
+  margin:18px auto 0;
+  border-radius:999px;
+  background: linear-gradient(90deg, transparent, var(--mint), transparent);
+  filter: drop-shadow(0 2px 10px rgba(46,230,166,.35));
+}
+
+/* ---------- Categories section ---------- */
+.categories{
+  padding:40px 0 80px;
+}
+
+/* tighten container width on huge screens */
+@media (min-width: 1400px){ .container{max-width:1100px} }
+
+/* grid gaps */
+.row{ row-gap:24px; }
+
+/* ---------- Card ---------- */
+.ml-card{
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)), var(--card);
+  border:1px solid var(--card-border);
+  border-radius:20px;
+  box-shadow: var(--shadow);
+  padding:18px 18px 20px;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.ml-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 18px 46px rgba(0,0,0,.45);
+  border-color: var(--ring);
+}
+
+/* header */
+.ml-card-head{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:12px;
+}
+.ml-icon{
+  width:40px;height:40px;
+  display:inline-grid;place-items:center;
+  border-radius:12px;
+  background: linear-gradient(135deg, var(--mint), var(--mint-700));
+  color:#062338;
+  box-shadow: 0 8px 18px rgba(46,230,166,.35);
+}
+.ml-card-title{
+  margin:0;
+  font-size:18px;
+  font-weight:800;
+  letter-spacing:.2px;
+}
+
+/* links list */
+.ml-links{
+  list-style:none;
+  padding:0;margin:0;
+  display:flex; flex-direction:column; gap:12px;
+}
+
+/* pill buttons */
+.catalogue-btn{
+  display:block;
+  width:100%;
+  padding:12px 14px;
+  border-radius:12px;
+  text-decoration:none;
+  text-align:center;
+  font-weight:700;
+  letter-spacing:.2px;
+  color:var(--ink);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border:1.5px solid rgba(255,255,255,.18);
+  box-shadow: var(--shadow-soft);
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease;
+}
+.catalogue-btn:hover{
+  transform: translateY(-2px);
+  border-color: var(--mint);
+  box-shadow: 0 12px 26px rgba(46,230,166,.30);
+  background: linear-gradient(180deg, rgba(46,230,166,.15), rgba(46,230,166,.05));
+}
+
+/* spacing polish on small screens */
+@media (max-width: 576px){
+  .hero{ padding:56px 0 28px; }
+  .ml-card{ padding:16px; }
 }
