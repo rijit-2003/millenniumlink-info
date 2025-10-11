@@ -4,9 +4,9 @@ function Hero() {
   return (
     <section className="hero text-center py-5 bg-light">
       <div className="container">
-        <h1 className="mb-3">Millennium Link Info Hub</h1>
+        <h1 className="mb-3">Millennium Link</h1>
         <h2 className="lead">
-          Explore catalogues and technical details for CCTV, Telephone Systems, and Biometric devices.
+          General Information about all our products and services.
         </h2>
       </div>
     </section>

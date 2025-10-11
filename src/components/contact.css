@@ -1,0 +1,69 @@
+:root {
+  --primary: #0ea5e9; 
+  --primary-dark: #0284c7;
+  --ink: #111827;
+  --ink-dim: #374151;
+}
+
+.contact-section {
+  padding: 96px 0; /* more vertical breathing room */
+  background: #f9fafb;
+}
+
+.contact-title {
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 900;
+  margin-bottom: 20px; /* more gap below title */
+  color: var(--primary);
+  text-shadow: 0 2px 8px rgba(14, 165, 233, 0.15);
+  line-height: 1.4;
+}
+
+.contact-subtitle {
+  color: var(--ink-dim);
+  max-width: 60ch;
+  margin: 0 auto 48px; /* bigger gap before icons */
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 36px; /* more vertical & horizontal spacing between items */
+}
+
+.contact-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px; /* gap between icon and text */
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 700;
+  padding: 28px 24px; /* more padding inside each card */
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  width: 150px; /* wider cards for more balance */
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.contact-link i {
+  font-size: 34px; /* bigger icon for visual breathing */
+}
+
+.contact-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(14, 165, 233, 0.25);
+  border-color: var(--primary);
+  color: var(--primary-dark);
+}
+
+/* Color tweaks per platform */
+.contact-link.linkedin i { color: #0a66c2; }
+.contact-link.whatsapp i { color: #25d366; }
+.contact-link.email i { color: #ea4335; }
+.contact-link.phone i { color: #16a34a; }

@@ -1,7 +1,13 @@
 import React from "react";
 import Hero from "../components/Hero";
 import CategoryCard from "../components/CategoryCard";
-
+import CCTVGuide from "../components/CCTVGuide";
+import EPABXGuide from "../components/EPABXGuide";
+// import CaseStudies from "../components/CaseStudies";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import BiometricGuide from "../components/BiometricGuide";
+import Contact from "../components/Contact";
 function Home() {
   const categories = [
     {
@@ -27,17 +33,23 @@ function Home() {
 
   return (
     <>
+      <Navbar />
       <Hero />
       <section className="categories">
-  <div className="container">
-    <div className="row">
-      {categories.map((cat, i) => (
-        <CategoryCard key={i} title={cat.title} items={cat.items} />
-      ))}
-    </div>
-  </div>
-</section>
-
+        <div className="container">
+          <div className="row">
+            {categories.map((cat, i) => (
+              <CategoryCard key={i} title={cat.title} items={cat.items} />
+            ))}
+          </div>
+        </div>
+      </section>
+      <CCTVGuide />
+      <EPABXGuide />
+      <BiometricGuide />
+      {/* <CaseStudies /> */}
+      <Contact />
+      <Footer />
     </>
   );
 }

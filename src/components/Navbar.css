@@ -1,0 +1,64 @@
+:root {
+  --navbar-bg: #0bb7f6;    /* default cyan background */
+  --navbar-text: #0b3a54;  /* dark text */
+  --navbar-text-hover: #1405e2;
+  --navbar-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+
+/* Base navbar */
+.custom-white-navbar {
+  background-color: var(--navbar-bg) !important;
+  box-shadow: var(--navbar-shadow);
+  transition: background-color .3s ease, box-shadow .3s ease;
+}
+
+/* Brand logo */
+.custom-white-navbar .navbar-brand img {
+  transition: transform .2s ease;
+}
+.custom-white-navbar .navbar-brand img:hover {
+  transform: scale(1.05);
+}
+
+/* Links */
+.custom-white-navbar .nav-link {
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: .3px;
+  color: var(--navbar-text);
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: color .2s ease, background .2s ease;
+}
+
+/* Hover + active */
+.custom-white-navbar .nav-link:hover,
+.custom-white-navbar .nav-link:focus {
+  color: var(--navbar-text-hover);
+  background: rgba(255,255,255,0.25);
+  text-decoration: none;
+}
+.custom-white-navbar .nav-link.active {
+  color: var(--navbar-text-hover);
+  background: rgba(255,255,255,0.35);
+}
+
+/* Mobile toggler */
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(11,58,84, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Optional: sticky shadow effect */
+.sticky-top.custom-white-navbar {
+  box-shadow: var(--navbar-shadow);
+}
+.custom-white-navbar .nav-link {
+  margin: 0 12px;   /* space on left and right */
+}
